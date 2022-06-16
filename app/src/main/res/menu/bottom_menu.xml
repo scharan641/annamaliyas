@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/action_favorites"
+    android:enabled="true"
+    android:icon="@drawable/person_black"
+    android:title=""
+    app:showAsAction="ifRoom"/>
+<item
+android:id="@+id/action_schedules"
+android:enabled="true"
+android:title=""
+android:icon="@drawable/task_black"
+app:showAsAction="ifRoom"/>
+<item
+android:enabled="true"
+android:title=""
+app:showAsAction="ifRoom"/>
+<item
+android:id="@+id/action_music"
+android:enabled="true"
+android:icon="@drawable/drive_eta_black"
+android:title=""
+app:showAsAction="ifRoom"/>
+</menu>

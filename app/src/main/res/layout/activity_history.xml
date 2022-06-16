@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.anaamalais.salescrm.SingleUserActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="back"
+                    app:srcCompat="@drawable/arrow_back_black" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:text="History"
+                    android:textColor="#58595B"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins" />
+            </LinearLayout>
+
+            <RelativeLayout
+                    android:id="@+id/rel_sales_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/txt_created_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:text="Enquired On"
+                    android:textColor="#58595B"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_enquired_on"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="35dp"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:text="04/10/21, 4:30pm"
+                    android:textColor="#131313"
+                    android:textSize="12sp" />
+                </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_contact_followup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_newcontact_followup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="35dp"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:text="New Contact"
+                    android:textColor="#58595B"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/img_contact_followup_downs"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_contact_followup_ups"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_newcontact_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_newcontact_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_newcontact_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_newcontact_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                    android:id="@+id/rel_enquiry_followup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ripple_effect_enquiry">
+
+                    <TextView
+                        android:id="@+id/txt_enquirys_followup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dp"
+                        android:fontFamily="@font/poppins"
+                        android:letterSpacing=".01"
+                        android:text="Enquiry Followup"
+                        android:textColor="#58595B"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_enquiry_followup_downs"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_down"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/img_enquiry_followup_ups"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_up"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_enquiry_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_enquiry_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_enquiry_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_enquiry_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                    android:id="@+id/rel_contacts_followup"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ripple_effect_enquiry">
+
+                    <TextView
+                        android:id="@+id/txt_enquiry_followup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:layout_centerVertical="true"
+                        android:letterSpacing=".01"
+                        android:text="Contact Followup"
+                        android:textColor="#58595B"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins" />
+
+                    <ImageView
+                        android:id="@+id/img_contact_followup_down"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_down"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/img_contact_followup_up"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_up"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_contact_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_contact_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_contact_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_contact_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_not_interested"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_not_interested"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Not Interested"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_not_interested_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_not_interested_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_not_interested_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_not_interested_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_not_interested_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_not_interested_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_scheduled_for_test_drive"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_scheduled_for_test_drive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Scheduled for Test Drive"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_scheduled_for_test_drive_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_scheduled_for_test_drive_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_scheduled_drive_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_scheduled_drive_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_scheduled_drive_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_scheduled_drive_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_test_drive_completed"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_test_drive_completed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Test Drive Completed"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_test_drive_completed_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_test_drive_completed_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_test_drive_complete_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_test_drive_complete_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_test_drive_complete_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_test_drive_complete_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+
+            <RelativeLayout
+                android:id="@+id/rel_booking_completed"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_booking_completed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Booking completed"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_booking_completed_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_booking_completed_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_booking_completed_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_booking_completed_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_booking_completed_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_booking_completed_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_booking_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_booking_follow_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Booking Follow Up"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_booking_follow_up_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_booking_followup_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_booking_follow_up_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_booking_follow_up_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_booking_follow_up_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_booking_follow_up_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+
+            <RelativeLayout
+                android:id="@+id/rel_pre_delivery_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_pre_delivery_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Pre Delivery"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_pre_delivery_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_pre_delivery_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lin_pre_delivery_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_pre_delivery_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_pre_delivery_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_pre_delivery_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_invoice_completed_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_invoice_completed_follow_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Invoice Completed"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_invoice_completed_follow_up_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_invoice_completed_followup_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_invoice_completed_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_invoice_completed_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_invoice_completed_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_invoice_completed_followup_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+
+            <RelativeLayout
+                android:id="@+id/rel_delivery_completed_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_delivery_completed_follow_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Delivery Completed"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_delivery_completed_follow_up_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_delivery_completed_followup_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_delivery_completed_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_delivery_completed_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_delivery_completed_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_delivery_completed_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_psf_followup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_psf_followup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="PSF (POST SALES FOLLOW UP)"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_psf_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_psf_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_psf_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_psf_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_psf_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_psf_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_fifteenth_day_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_fifteenth_day_follow_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="15th day Follow Up"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_fifteenth_day_follow_up_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_fifteenth_day_follow_up_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_fifteenth_day_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_fifteenth_day_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_fifteenth_day_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_fifteenth_day_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_oneK_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_oneK_follow_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="1K Follow Up"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_oneK_follow_up_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_oneK_follow_up_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_oneK_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_oneK_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_oneK_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_oneK_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+            <RelativeLayout
+                android:id="@+id/rel_drop"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_effect_enquiry">
+
+                <TextView
+                    android:id="@+id/txt_drop_followup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_centerVertical="true"
+                    android:letterSpacing=".01"
+                    android:text="Drop"
+                    android:textColor="#58595B"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+                <ImageView
+                    android:id="@+id/img_drop_down"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="visible"/>
+
+                <ImageView
+                    android:id="@+id/img_drop_up"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="35dp"
+                    android:src="@drawable/ic_up"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_drop_follow_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingLeft="35dp"
+                android:paddingRight="35dp">
+
+                <TextView
+                    android:id="@+id/txt_drop_empty_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Oops There is no History to Show!!"
+                    android:textColor="#131313"
+                    android:textSize="25dp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/poppins" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_drop_follow_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/txt_drop_change_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:letterSpacing=".01"
+                    android:text="Contact Followup"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#E1E1E1"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

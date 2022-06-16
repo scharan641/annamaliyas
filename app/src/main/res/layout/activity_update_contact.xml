@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lin_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:orientation="horizontal">
+
+        <ImageView android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/arrow_back_black"
+            android:onClick="back"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="5dp"
+            android:text="Update Contact"
+            android:textColor="#58595B"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nest_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lin_title"
+        android:layout_above="@+id/txt_update_contact"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lin_prospect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prospect Category"
+                        android:textColor="#58595B"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="13dp"
+                        android:fontFamily="@font/poppins_medium"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:id="@+id/txt_individual"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_line_grey"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:letterSpacing=".01"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="Individual"
+                            android:textAlignment="center"
+                            android:textColor="#A7A7A7"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/txt_corporate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="Corporate"
+                            android:textAlignment="center"
+                            android:textColor="#A7A7A7"
+                            android:textSize="12sp"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            android:background="@drawable/btn_line_grey"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:letterSpacing=".01"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewline"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/lin_prospect"
+                    android:background="#A7A7A7" />
+
+                <RelativeLayout
+                    android:id="@+id/lin_personal_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/viewline"
+                    android:background="@drawable/ripple_effect"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dp"
+                        android:fontFamily="@font/poppins"
+                        android:letterSpacing=".01"
+                        android:text="Personal Details"
+                        android:textColor="#2F3044"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_down"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/img_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_up"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_individual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lin_personal_details"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <!--  Modele  -->
+                    <RelativeLayout
+                        android:id="@+id/rel_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="visible">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_mode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_Profession"
+                            android:spinnerMode="dropdown"
+                            android:theme="@style/ThemeSpinner" />
+                    </RelativeLayout>
+
+
+                    <!--  Source  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_source"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_sub_occupation"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+                    <!--  Customer Name  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Customer Name *"
+                            android:text="12sp"
+                            android:fontFamily="@font/poppins"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cus_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:singleLine="true"
+                                android:inputType="textPersonName"
+                                android:maxLength="80"
+                                android:fontFamily="@font/poppins"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!-- Contact Number 1  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Contact Number 1 *"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cus_one_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!--  Contact Number 2   -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Contact Number 2"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cus_two_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <!--  Email  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="vertical">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Email *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cus_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="textEmailAddress"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/edt_cus_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="30dp"
+                        android:drawableRight="@drawable/itoday_black"
+                        android:focusable="false"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="left|center"
+                        android:hint="Dob"
+                        android:textColor="#2F3044"
+                        android:textColorHint="#A7A7A7"
+                        android:textSize="12dp" />
+
+
+                    <!--  Modele  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_profession"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+
+                    <!--  Sub Occupation   -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Sub Occupation"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cus_sub_occupation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:singleLine="true"
+                                android:inputType="textPersonName"
+                                android:maxLength="50"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <!--  Address  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Address 1 *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_address_line_one"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="textPostalAddress"
+                                android:maxLength="40"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:text="12sp"
+                            android:hint="Address 2 *"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_address_line_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="textPostalAddress"
+                                android:maxLength="50"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:text="12sp"
+                            android:hint="Pincode *"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_address_line_three"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:maxLength="6"
+                                android:text=""
+                                android:imeOptions="actionDone"
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+
+                    <!--  Annual Income  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_annual_income"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rel_cop_details_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/lin_individual"
+                    android:background="@drawable/ripple_effect"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txt_cop_details_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dp"
+                        android:fontFamily="@font/poppins"
+                        android:letterSpacing=".01"
+                        android:text="Company Details"
+                        android:textColor="#2F3044"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_cop_down"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_down"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/img_cop_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_up"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lin_corporate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rel_cop_details_title"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:visibility="gone">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_cop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                    <!--  Modele  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_mode_cop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+                    <!--  Source  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <Spinner
+                            android:id="@+id/spinner_source_cop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+                    <!--  Customer Name  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Company Name *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_cus_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="8dp">
+
+                        <Spinner
+                            android:id="@+id/spinner_company_type_cop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                    <!--  Customer Name  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Contact Person Name"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_contact_person_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <!-- Designation  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Designation"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_designation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!-- Mobile Number  -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Mobile Number *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_mobile_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <!-- Additional Mobile Number -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Additional Mobile Number"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_sec_mobile_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+
+                    <!--  Address  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Address One *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_address_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="textPostalAddress"
+                                android:maxLength="50"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Address Two *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_address_line_two"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="textPostalAddress"
+                                android:maxLength="40"
+                                android:singleLine="true"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.Design.TextInputLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:hint="Pincode *"
+                            android:text="12sp"
+                            android:textColorHint="#A7A7A7">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_cop_address_line_three"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"
+                                android:text=""
+                                android:textColor="#2F3044"
+                                android:textSize="13sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+
+                    <!--  Annual Income  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="8dp">
+
+                        <Spinner
+                            android:id="@+id/spinner_annual_income_cop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/viewlineintersted"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#A7A7A7"
+                    android:layout_above="@+id/lin_intrested_toyota_vehicle"/>
+
+                <RelativeLayout
+                    android:id="@+id/lin_intrested_toyota_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/lin_corporate"
+                    android:background="@drawable/ripple_effect">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="35dp"
+                        android:fontFamily="@font/poppins"
+                        android:letterSpacing=".01"
+                        android:text="Interested Toyota Vehicle"
+                        android:textColor="#2F3044"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/img_down_intrested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_down" />
+
+                    <ImageView
+                        android:id="@+id/img_up_intrested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dp"
+                        android:src="@drawable/ic_up"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/lin_intrested_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/lin_intrested_toyota_vehicle"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="35dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_model_suffix_cop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                    <!--  Model Variant  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_model_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                    <!--  Lead Category  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+
+                        <!-- Spinner Element -->
+                        <Spinner
+                            android:id="@+id/spinner_exterEior_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                    <!--  Customer ID  -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+
+                        <Spinner
+                            android:id="@+id/spinner_interior_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_back"
+                            android:backgroundTint="#A7A7A7"
+                            android:dropDownVerticalOffset="30dp"
+                            android:prompt="@string/spinner_lead_title"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
+
+                    <!--  Title  -->
+                    <RelativeLayout
+                        android:id="@+id/rel_nes_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:letterSpacing=".01"
+                            android:text="Quantity"
+                            android:textColor="#A7A7A7"
+                            android:textSize="12sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true">
+
+                            <TextView
+                                android:id="@+id/txt_minus"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/shape_minus"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:text="-"
+                                android:textColor="#FFFFFF" />
+
+
+                            <TextView
+                                android:id="@+id/txt_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/txt_minus"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:text="1"
+                                android:textColor="#A7A7A7" />
+
+
+                            <TextView
+                                android:id="@+id/txt_plus"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@+id/txt_count"
+                                android:background="@drawable/shape_plus"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:text="+"
+                                android:textColor="#FFFFFF" />
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <!--  Follow Up  -->
+                    <!--  Remarks  -->
+                    <!--  Button  -->
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <TextView
+        android:id="@+id/txt_update_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_text_button"
+        android:fontFamily="@font/poppins"
+        android:onClick="updatecontact"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="14dp"
+        android:text="Update Contact"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+</RelativeLayout>
+

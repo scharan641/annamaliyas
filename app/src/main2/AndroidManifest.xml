@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.anaamalais.salescrm">
+
+    <uses-permission android:name="android.permision.CALL_PHONE"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"
+        android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
+
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"
+        android:required="true"
+        android:requiredFeature="true"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+
+    <supports-screens
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/toyota_europe_logo"
+        android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@drawable/toyota_europe_logo"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.SalesCrm">
+
+        <activity android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:launchMode = "singleTask"/>
+
+        <activity android:name=".HomeActivity"
+            android:screenOrientation="portrait"
+            android:noHistory="true"/>
+
+        <activity android:name=".SingleUserActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CatalogueActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".TaskListActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".TaskDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".AddMeetingActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CustomerViewActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".AddContactActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <activity android:name=".AddEnquiryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+
+        <activity android:name=".ModelDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CreateMeeting"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CustomerMeetingActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".NotificationActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".UserProfileActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CustomerDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".InterestedContactActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".NotInterestedContactActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ScheduleForTheDriveActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".TestDriveCompletedActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".BookingCompletedActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".BookingFollowUpActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".InvoiceCompletedActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".PreDeliveryActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".DeliveryActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".PostSalesFollowupActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".FifteenthDayFollowupActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".OnekActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".HistoryActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CompleteDetailsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".DroppedActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".CalendartaskActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ActivityUpdateContact"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".UpdateEnquiryActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".AddFollowUpTaskActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ContactTargetActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".EnquiryTargetActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".TestDriveActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".FinanceActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".InsuranceActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".EwarrantyActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".AccessoriesActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".BookingTargetActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".RetailActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".GenerateQuotationfor"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".AccessoriesList"
+            android:screenOrientation="portrait"/>
+
+        <service
+            android:name=".GpsTracker.service.ForegroundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".GpsTracker.service.JobSchedulerService"
+            android:label="Job service"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+        <service android:name=".GpsTracker.workmanagerLocation.Service.GPSTrackerWM" />
+
+        <service
+            android:name=".GpsTracker.workmanagerLocation.Service.LocationJob"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".GpsTracker.workmanagerLocation.Service.LocationBroadcastReceiver" />
+
+
+    </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PICK" />
+            <data android:mimeType="vnd.android.cursor.dir/image" />
+        </intent>
+    </queries>
+</manifest>

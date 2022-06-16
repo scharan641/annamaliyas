@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#414141"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="0dp"
+        android:gravity="center"
+        android:background="@drawable/dailog_background">
+
+        <TextView
+            android:id="@+id/txt_add_contact"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Add Contact"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/shape_dailog_home"/>
+
+        <TextView
+            android:id="@+id/txt_add_enquiry"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/shape_dailog_home"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Add Enquiry"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_bottom"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_above="@+id/customBottomBar"
+            android:layout_gravity="center"
+            android:src="@drawable/cancel"
+            android:layout_marginTop="60dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
