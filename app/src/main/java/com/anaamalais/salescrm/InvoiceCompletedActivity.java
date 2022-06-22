@@ -664,4 +664,10 @@ public class InvoiceCompletedActivity extends AppCompatActivity {
         requestQueue.add(requests);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(InvoiceCompletedActivity.this,CustomerDetailsActivity.class).putExtra("Status","Invoice Completed"));
+        finish();
+    }
 }

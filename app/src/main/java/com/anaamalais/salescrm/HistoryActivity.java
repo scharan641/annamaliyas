@@ -1997,4 +1997,11 @@ public class HistoryActivity extends AppCompatActivity {
         requestQueue.add(requests);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(HistoryActivity.this,CustomerDetailsActivity.class).putExtra("Status","BACK"));
+        finish();
+    }
 }

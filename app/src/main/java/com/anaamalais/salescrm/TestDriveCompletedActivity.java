@@ -179,7 +179,9 @@ public class TestDriveCompletedActivity extends AppCompatActivity implements Ima
         lin_top_second = findViewById(R.id.lin_top_second);
         edt_license_no = findViewById(R.id.edt_license_no);
         TEST_DRIVE_ID = getIntent().getStringExtra("CONTACTID");
-              //  MyFunctions.getSharedPrefs(TestDriveCompletedActivity.this, Constants.TESTDRIVEID,"");
+//        hitfortestdriveID();
+
+        //  MyFunctions.getSharedPrefs(TestDriveCompletedActivity.this, Constants.TESTDRIVEID,"");
                 //"9";
                 //MyFunctions.getSharedPrefs(TestDriveCompletedActivity.this, Constants.TESTDRIVEID,"");
                 //MyFunctions.getSharedPrefs(TestDriveCompletedActivity.this, Constants.TESTDRIVEID,"");
@@ -533,7 +535,6 @@ public class TestDriveCompletedActivity extends AppCompatActivity implements Ima
             openCamera();
         });
 
-//        hitfortestdriveID();
     }
 
     private void hitfortestdriveID() {
@@ -541,7 +542,7 @@ public class TestDriveCompletedActivity extends AppCompatActivity implements Ima
             @Override
             public void onResponse(String response) {
                 if (!response.equals(null)) {
-                    progressDialog.dismiss();
+//                    progressDialog.dismiss();
                     try {
                         JSONObject jsonObj = new JSONObject(response);
                         System.out.println("Json string is:" + jsonObj);
@@ -1046,12 +1047,14 @@ public class TestDriveCompletedActivity extends AppCompatActivity implements Ima
                             String dl_number = jsonObject.getString("dl_number");
                             MyFunctions.setSharedPrefs(TestDriveCompletedActivity.this,Constants.DLNUMBER,dl_number);
                             String dl_photo = jsonObject.getString("dl_photo");
-                            preferenceManager.setLicencedriveimageurl(dl_photo);
+//                            preferenceManager.setLicencedriveimageurl(dl_photo);
 //                            MyFunctions.setSharedPrefs(TestDriveCompletedActivity.this,Constants.DLNUMBER,dl_number);
                             //"dl_photo"
                            // String test_drive_id = jsonObject.getString("test_drive_id");
                           //  MyFunctions.setSharedPrefs(TestDriveCompletedActivity.this,Constants.TESTDRIVEID,test_drive_id);
-                           startActivity(new Intent(TestDriveCompletedActivity.this,CustomerDetailsActivity.class).putExtra("Status",contact_status));
+                           startActivity(new Intent(TestDriveCompletedActivity.this,CustomerDetailsActivity.class)
+                                   .putExtra("Status",contact_status)
+                                   .putExtra("dl_photo",dl_photo));
                            finish();
 
                         } else if (status_code.equals("0")) {

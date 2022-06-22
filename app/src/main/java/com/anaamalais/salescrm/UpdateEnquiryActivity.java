@@ -2361,8 +2361,11 @@ public class UpdateEnquiryActivity extends AppCompatActivity implements AdapterV
                             SourceTypeArrayAdapter adapter = new SourceTypeArrayAdapter(UpdateEnquiryActivity.this,
                                     R.layout.layout_source_type, sourcesLists);
                             spinner_source.setAdapter(adapter);
-                            spinner_source.setSelection(Integer.parseInt(MyFunctions.getSharedPrefs(UpdateEnquiryActivity.this,Constants.SPINNERSOURCEID,"")));
+                            try{
+                                spinner_source.setSelection(Integer.parseInt(MyFunctions.getSharedPrefs(UpdateEnquiryActivity.this,Constants.SPINNERSOURCEID,"")));
+                            } catch(NumberFormatException ex){ // handle your exception
 
+                            }
 
                         } else if (status_code.equals("0")) {
                             msg = (String) jsonObj.getString("msg");
@@ -2653,7 +2656,14 @@ public class UpdateEnquiryActivity extends AppCompatActivity implements AdapterV
                             ModelsTypeArrayAdapter adapter = new ModelsTypeArrayAdapter(UpdateEnquiryActivity.this,
                                     R.layout.layout_model_type, modelsLists);
                             spinner_model_suffix_cop.setAdapter(adapter);
-                            spinner_model_suffix_cop.setSelection(Integer.parseInt(MyFunctions.getSharedPrefs(UpdateEnquiryActivity.this,Constants.VEHICLEID,"")));
+
+                            try{
+                                spinner_model_suffix_cop.setSelection(Integer.parseInt(MyFunctions.getSharedPrefs(UpdateEnquiryActivity.this,Constants.VEHICLEID,"")));
+                            } catch(NumberFormatException ex){ // handle your exception
+
+                            }
+
+
 
                         } else if (status_code.equals("0")) {
                             msg = (String) jsonObj.getString("msg");

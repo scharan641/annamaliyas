@@ -194,4 +194,11 @@ public class RetailActivity extends AppCompatActivity {
         requestQueue.add(requests);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(RetailActivity.this,HomeActivity.class));
+        finish();
+    }
 }

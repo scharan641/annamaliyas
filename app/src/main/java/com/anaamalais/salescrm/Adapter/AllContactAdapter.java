@@ -152,6 +152,7 @@ public class AllContactAdapter extends RecyclerView.Adapter<AllContactAdapter.Al
                     MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUPTIME,allContactsList.getFollow_up_time());
                     MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUPTYPE,allContactsList.getFollow_up_type());
                     MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUPID,allContactsList.getFollow_up_id());
+                    MyFunctions.setSharedPrefs(mCtx,Constants.DLPHOTO,allContactsList.getDl_photo());
                     MyFunctions.setSharedPrefs(mCtx,Constants.OVERALLTDEXPERIANCE,allContactsList.getOverall_td_exp());
                     MyFunctions.setSharedPrefs(mCtx,Constants.OVERALLCONDITIONOFVEHICLE,allContactsList.getOverall_condition_of_vehicle());
                     MyFunctions.setSharedPrefs(mCtx,Constants.SALES_CONSULTANTKNOWLEDGEOFTHEPRODUCT,allContactsList.getSales_consultant_knowledge_of_the_product());
@@ -222,7 +223,7 @@ public class AllContactAdapter extends RecyclerView.Adapter<AllContactAdapter.Al
                     MyFunctions.setSharedPrefs(mCtx,Constants.AF_WAITING_REASON,allContactsList.getAf_waiting_reason());
                     MyFunctions.setSharedPrefs(mCtx,Constants.EXTENDED_WARRANTY,allContactsList.getExtended_warranty());
                     MyFunctions.setSharedPrefs(mCtx,Constants.FASTAG,allContactsList.getFastag());
-                    MyFunctions.setSharedPrefs(mCtx,Constants.RTO_PROCESS,allContactsList.getRto_process());
+                    MyFunctions.setSharedPrefs(mCtx,Constants.RTO_PROCESS,allContactsList.getRtoProcess());
                     MyFunctions.setSharedPrefs(mCtx,Constants.RTO_WAITING_REASON,allContactsList.getRto_waiting_reason());
                     MyFunctions.setSharedPrefs(mCtx,Constants.ALLOCATION_PDI,allContactsList.getAllocation_pdi());
                     MyFunctions.setSharedPrefs(mCtx,Constants.PREFERRED_RTO_DATE,allContactsList.getPreferred_rto_date());
@@ -237,6 +238,9 @@ public class AllContactAdapter extends RecyclerView.Adapter<AllContactAdapter.Al
                     //MyFunctions.setSharedPrefs(mCtx,Constants.INVOICE_COMPLETED_ID,allContactsList.getIn);
                     MyFunctions.setSharedPrefs(mCtx,Constants.BOOKINGDATE,allContactsList.getBooking_date());
                     MyFunctions.setSharedPrefs(mCtx,Constants.BOOKINGTIME,allContactsList.getExpected_invoice_date());
+                    MyFunctions.setSharedPrefs(mCtx,Constants.INVOICE_COMPLETED_DATE,allContactsList.getInvoiceCompletedDate());
+                    MyFunctions.setSharedPrefs(mCtx,Constants.INVOICE_COMPLETED_TIME,allContactsList.getInvoiceCompletedTime());
+                    MyFunctions.setSharedPrefs(mCtx,Constants.INVOICE_COMPLETED_COMMENTS,allContactsList.getInvoiceCompletedComments());
                    // MyFunctions.setSharedPrefs(mCtx,Constants.INVOICE_COMPLETED_COMMENTS,allContactsList.getInC);
                     mCtx.startActivity(new Intent(mCtx,CustomerDetailsActivity.class).putExtra("Status", allContactsList.getStatus()));
                     ((Activity)mCtx).finish();
@@ -246,10 +250,10 @@ public class AllContactAdapter extends RecyclerView.Adapter<AllContactAdapter.Al
                     MyFunctions.setSharedPrefs(mCtx, Constants.CUSTOMER_PHONE, allContactsList.getPhone());
                     MyFunctions.setSharedPrefs(mCtx,Constants.CUSTOMER_ADDRESS,allContactsList.getModel_and_suffix());
                     MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUPDATE,allContactsList.getFollow_up_date());
-                    MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUP_REMARK,allContactsList.getComments());
+//                    MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUP_REMARK,allContactsList.getComments());
                     MyFunctions.setSharedPrefs(mCtx,Constants.TIME,allContactsList.getTime());
                     MyFunctions.setSharedPrefs(mCtx,Constants.DATE,allContactsList.getDate());
-                    MyFunctions.setSharedPrefs(mCtx,Constants.COMMENT,allContactsList.getComment());
+                    MyFunctions.setSharedPrefs(mCtx,Constants.COMMENTS,allContactsList.getComments());
                     MyFunctions.setSharedPrefs(mCtx,Constants.REFNAME,allContactsList.getRefName());
                     MyFunctions.setSharedPrefs(mCtx,Constants.REFPHONE,allContactsList.getRefPhone());
                     MyFunctions.setSharedPrefs(mCtx,Constants.FOLLOWUPID,allContactsList.getFollow_up_id());

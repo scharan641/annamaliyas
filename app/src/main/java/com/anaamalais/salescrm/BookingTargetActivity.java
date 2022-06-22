@@ -193,4 +193,11 @@ public class BookingTargetActivity extends AppCompatActivity {
         requestQueue.add(requests);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(BookingTargetActivity.this,HomeActivity.class));
+        finish();
+    }
 }

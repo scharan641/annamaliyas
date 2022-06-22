@@ -989,4 +989,11 @@ public class DeliveryActivity extends AppCompatActivity {
         };
         requestQueue.add(requests);
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(DeliveryActivity.this,CustomerDetailsActivity.class).putExtra("Status","Delivery Completed"));
+        finish();
+    }
 }

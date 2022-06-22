@@ -43,6 +43,7 @@ public class Constants {
     public static String FIFTEEN_dAY_FOLLOWUP_ID = "FIFTEEN_dAY_FOLLOWUP_ID";
     public static String STATUSID = "STATUSID";
     public static String COMMENT = "COMMENT";
+    public static String COMMENTS = "COMMENTS";
     public static String FOLLOWUP_REMARK = "FOLLOWUP_REMARK";
     public static String DELIVERY_COMPLETED_ID = "DELIVERY_COMPLETED_ID";
     public static String TIME = "TIME";
@@ -58,6 +59,8 @@ public class Constants {
     public static String ALLOCATION_PDI = "ALLOCATION_PDI";
     public static String PREFERRED_RTO_DATE = "PREFERRED_RTO_DATE";
     public static String INVOICE_COMPLETED_COMMENTS = "INVOICE_COMPLETED_COMMENTS";
+    public static String INVOICE_COMPLETED_TIME = "INVOICE_COMPLETED_TIME";
+    public static String INVOICE_COMPLETED_DATE = "INVOICE_COMPLETED_DATE";
     public static String INVOICE_COMPLETED_ID = "INVOICE_COMPLETED_ID";
 
     public static String BOOKING_FOLLOWUP_DETAILS_ID = "BOOKING_FOLLOWUP_DETAILS_ID";
@@ -97,6 +100,7 @@ public class Constants {
     public static String SPINNERSOURCEID = "spinnersourceid";
     public static String INTERIOR = "interior";
     public static String EXTEREIOR = "extereior";
+    public static String UTILITY = "utility";
     public static String PAYMENTSMODE = "paymentsmode";
     public static String MODEL_ID = "modelid";
     public static String PRICEINT = "priceint";

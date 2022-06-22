@@ -736,4 +736,11 @@ public class CalendartaskActivity extends AppCompatActivity {
         requestQueue.add(requests);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CalendartaskActivity.this,TaskListActivity.class));
+        finish();
+    }
 }

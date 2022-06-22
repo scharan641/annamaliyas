@@ -195,4 +195,11 @@ public class FifteenthDayFollowupActivity extends AppCompatActivity {
         requestQueue.add(requests);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(FifteenthDayFollowupActivity.this,CustomerDetailsActivity.class).putExtra("Status","15th Day Followup"));
+        finish();
+    }
 }

@@ -8,15 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CommonData {
+    public static List<InterioraccessoriesList> interioraccessoriesLists = new ArrayList<>();
+    public static List<ExterioraccessoriesList> exterioraccessoriesLists = new ArrayList<>();
+    public static List<UtilityaccessoriesList> utilityaccessoriesLists  = new ArrayList<>();
 
     public interface getInteriorData{
-       static List<InterioraccessoriesList> interioraccessoriesLists = new ArrayList<>();
-       static List<ExterioraccessoriesList> exterioraccessoriesLists = new ArrayList<>();
-       static List<UtilityaccessoriesList> utilityaccessoriesLists  = new ArrayList<>();
+
 
     }
 
-    public interface getExteriorData{
+    public interface clearData{
+
 //        static List<ExterioraccessoriesList> exterioraccessoriesLists = new ArrayList<>();
 
     }

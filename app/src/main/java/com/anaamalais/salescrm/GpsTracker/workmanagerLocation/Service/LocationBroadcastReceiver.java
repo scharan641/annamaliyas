@@ -63,13 +63,15 @@ public class LocationBroadcastReceiver extends BroadcastReceiver {
             new Handler().postDelayed(() -> updateActivity(context),2000);
 
 
-            str = "Your Location is - \nLat: " + latitude
-                    + "\nLog: " + longitude;
+//            str = "Your Location is - \nLat: " + latitude
+//                    + "\nLog: " + longitude;
+
+            str = "Your Location is Updating";
 
             LocationStatus = LocationStatus.concat("and Location is Enable. ");
 
 
-            sendNotification("LocationJob", "onStartJob: " + str, "", context);
+            sendNotification("Location", "onStartJob: " + str, "", context);
         } else {
             LocationStatus = LocationStatus.concat("and Location is Not Enable. ");
         }

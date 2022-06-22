@@ -165,4 +165,11 @@ public class NotificationActivity extends AppCompatActivity {
         requestQueue.add(requests);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(NotificationActivity.this,HomeActivity.class));
+        finish();
+    }
 }

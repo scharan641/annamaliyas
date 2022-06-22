@@ -54,8 +54,8 @@ public class InterioraccessoriesAdapter extends RecyclerView.Adapter<Interioracc
     @Override
     public void onBindViewHolder (final InterioraccessoriesViewHolder holder, int position){
         //getting the product of the specified position
-        final InterioraccessoriesList mode = interioraccessoriesLists.get(position);
         holder.setIsRecyclable(false);
+        final InterioraccessoriesList mode = interioraccessoriesLists.get(position);
         holder.txt_cus_name.setText(mode.getInterior_accessory_name());
         holder.txt_cus_number.setText(mode.getInterior_accessory_price());
 
@@ -69,7 +69,7 @@ public class InterioraccessoriesAdapter extends RecyclerView.Adapter<Interioracc
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 holder.swt_notify_customer.setChecked(b);
-                listener.onItemUnchecked(position,b);
+                listener.onItemUnchecked(position,b, Constants.INTERIOR);
             }
         });
 
@@ -129,6 +129,6 @@ public class InterioraccessoriesAdapter extends RecyclerView.Adapter<Interioracc
 
     public interface OnItemsInterioraccessoriesClickListener{
         void onItemClick(InterioraccessoriesList interioraccessoriesList);
-        void onItemUnchecked(int position, boolean isTrue);
+        void onItemUnchecked(int position, boolean isTrue, String screen);
     }
 }

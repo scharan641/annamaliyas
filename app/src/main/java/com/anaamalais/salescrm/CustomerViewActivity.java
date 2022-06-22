@@ -39,4 +39,10 @@ public class CustomerViewActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CustomerViewActivity.this,HomeActivity.class));
+        finish();
+    }
 }

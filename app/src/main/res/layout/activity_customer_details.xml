@@ -418,7 +418,7 @@
                         android:fontFamily="@font/poppins"
                         android:gravity="center"
                         android:letterSpacing=".01"
-                        android:text="Date"
+                        android:text="Time"
                         android:textAlignment="center"
                         android:textColor="#58595B"
                         android:textSize="12sp" />
@@ -445,7 +445,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:visibility="visible">
 
                     <TextView
@@ -465,8 +465,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginEnd="15dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="left|center"
+                        android:gravity="right|center"
                         android:text=""
                         android:textColor="#131313"
                         android:textSize="13sp" />
@@ -2062,14 +2063,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:visibility="visible">
 
                     <TextView
                         android:id="@+id/txt_invoice_complete"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
                         android:fontFamily="@font/poppins"
                         android:gravity="left|center"
                         android:text="Comments"
@@ -2082,8 +2083,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginEnd="20dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="left|center"
+                        android:gravity="end"
                         android:text=""
                         android:textColor="#131313"
                         android:textSize="13sp" />
@@ -2264,7 +2266,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:visibility="gone">
 
                     <TextView
@@ -2285,8 +2287,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="left|center"
-                        android:text=""
+                        android:gravity="right|center"
+                        android:layout_marginEnd="20dp"                        android:text=""
                         android:textColor="#131313"
                         android:textSize="13sp" />
 
@@ -2409,7 +2411,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:visibility="gone">
 
                     <TextView
@@ -2430,7 +2432,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/poppins_semibold"
-                        android:gravity="left|center"
+                        android:gravity="right|center"
+                        android:layout_marginEnd="20dp"
                         android:text=""
                         android:textColor="#131313"
                         android:textSize="13sp" />
@@ -2653,6 +2656,7 @@
             android:id="@+id/Img_message"
             android:layout_width="53dp"
             android:layout_height="53dp"
+            android:visibility="gone"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@+id/Img_phone"
             android:background="@drawable/shape_circle"

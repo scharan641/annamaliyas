@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.anaamalais.salescrm.List.ExteriorColorsList;
 import com.anaamalais.salescrm.List.UpdateExteriorColorList;
+import com.anaamalais.salescrm.List.VariantsLIst;
 import com.anaamalais.salescrm.R;
 
 import java.util.List;
@@ -59,19 +60,21 @@ public class UpdateExteriorTypeArrayAdapter extends ArrayAdapter<String> {
         final View view = mInflater.inflate(R.layout.layout_exteriorcolor_type, parent, false);
 
         TextView offTypeTv = (TextView) view.findViewById(R.id.offer_exterior_color_txt);
-        UpdateExteriorColorList offerData = items.get(position);
-        if(position == 0){
+        if (items.size() > position) {
+            UpdateExteriorColorList offerData = items.get(position);
+            if (position == 0) {
             // Set the hint text color gray
             offTypeTv.setTextColor(Color.GRAY);
             // offTypeTv.setText(offerData.getModel_suffix()+ "\t" + "*");
             //  tv.setTextColor(Color.parseColor("#A7A7A7"));
             //  tv.setTextSize(12);
 
-        }
-        else {
+        } else {
             offTypeTv.setTextColor(Color.parseColor("#131313"));
             offTypeTv.setText(offerData.getExterior_color());
         }
+
+         }
         return view;
     }
 }

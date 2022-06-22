@@ -69,6 +69,10 @@ public class AllContactsList {
     private String comments;
     private String refName;
     private String refPhone;
+    private String invoiceCompletedDate;
+    private String invoiceCompletedTime;
+    private String invoiceCompletedComments;
+    private String rtoProcess;
 
     public String getRefPhone() {
         return refPhone;
@@ -612,5 +616,37 @@ public class AllContactsList {
 
     public void setRefName(String refName) {
         this.refName = refName;
+    }
+
+    public String getInvoiceCompletedDate() {
+        return invoiceCompletedDate;
+    }
+
+    public void setInvoiceCompletedDate(String invoiceCompletedDate) {
+        this.invoiceCompletedDate = invoiceCompletedDate;
+    }
+
+    public String getInvoiceCompletedTime() {
+        return invoiceCompletedTime;
+    }
+
+    public void setInvoiceCompletedTime(String invoiceCompletedTime) {
+        this.invoiceCompletedTime = invoiceCompletedTime;
+    }
+
+    public String getInvoiceCompletedComments() {
+        return invoiceCompletedComments;
+    }
+
+    public void setInvoiceCompletedComments(String invoiceCompletedComments) {
+        this.invoiceCompletedComments = invoiceCompletedComments;
+    }
+
+    public String getRtoProcess() {
+        return rtoProcess;
+    }
+
+    public void setRtoProcess(String rtoProcess) {
+        this.rtoProcess = rtoProcess;
     }
 }

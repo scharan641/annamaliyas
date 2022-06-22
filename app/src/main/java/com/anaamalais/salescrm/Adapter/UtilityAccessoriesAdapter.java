@@ -71,7 +71,7 @@ public class UtilityAccessoriesAdapter extends RecyclerView.Adapter<UtilityAcces
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 holder.swt_notify_customer.setChecked(b);
-                listener.onItemUnchecked(position,b);
+                listener.onItemUnchecked(position,b,Constants.UTILITY);
             }
         });
 
@@ -119,7 +119,7 @@ public class UtilityAccessoriesAdapter extends RecyclerView.Adapter<UtilityAcces
 
     public interface OnItemsutilityaccessoriesClickListener{
         void onItemClick(UtilityaccessoriesList utilityaccessoriesList);
-        void onItemUnchecked(int position, boolean isTrue);
+        void onItemUnchecked(int position, boolean isTrue, String screen);
 
     }
 }

@@ -71,7 +71,7 @@ public class ExteriorAccessoriesAdapter extends RecyclerView.Adapter<ExteriorAcc
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 holder.swt_notify_customer.setChecked(b);
-                listener.onItemUnchecked(position,b);
+                listener.onItemUnchecked(position,b, Constants.EXTEREIOR);
             }
         });
 
@@ -121,7 +121,7 @@ public class ExteriorAccessoriesAdapter extends RecyclerView.Adapter<ExteriorAcc
 
     public interface OnItemsExterioraccessoriesClickListener{
         void onItemClick(ExterioraccessoriesList exterioraccessoriesList);
-        void onItemUnchecked(int position, boolean isTrue);
+        void onItemUnchecked(int position, boolean isTrue, String screen);
 
     }
 }

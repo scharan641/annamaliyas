@@ -278,6 +278,27 @@ public class SingleUserActivity extends AppCompatActivity {
                                     modeList.setModel_and_suffix(jsonObject_titles.getString("model_and_suffix"));
                                 }
 
+                                if (jsonObject_titles.isNull("invoice_completed_date")){
+                                    //  System.out.println("NAME"+jsonObject_titles.getString("model_and_suffix"));
+
+                                }else {
+                                    modeList.setInvoiceCompletedDate(jsonObject_titles.getString("invoice_completed_date"));
+                                }
+
+                                if (jsonObject_titles.isNull("invoice_completed_time")){
+                                    //  System.out.println("NAME"+jsonObject_titles.getString("model_and_suffix"));
+
+                                }else {
+                                    modeList.setInvoiceCompletedTime(jsonObject_titles.getString("invoice_completed_time"));
+                                }
+
+                                if (jsonObject_titles.isNull("invoice_completed_time")){
+                                    //  System.out.println("NAME"+jsonObject_titles.getString("model_and_suffix"));
+
+                                }else {
+                                    modeList.setInvoiceCompletedComments(jsonObject_titles.getString("invoice_completed_comments"));
+                                }
+
                                 if (jsonObject_titles.isNull("pre_delivery_id")){
                                    // System.out.println("NAME"+jsonObject_titles.getString("pre_delivery_id"));
 
@@ -318,6 +339,13 @@ public class SingleUserActivity extends AppCompatActivity {
 
                                 }else {
                                     modeList.setRto_waiting_reason(jsonObject_titles.getString("rto_waiting_reason"));
+                                }
+
+                                if (jsonObject_titles.isNull("rto_process")){
+                                    // System.out.println("NAME"+jsonObject_titles.getString("rto_waiting_reason"));
+
+                                }else {
+                                    modeList.setRtoProcess(jsonObject_titles.getString("rto_process"));
                                 }
 
                                 if (jsonObject_titles.isNull("preferred_rto_date")){
@@ -732,21 +760,21 @@ public class SingleUserActivity extends AppCompatActivity {
                                   //  System.out.println("NAME"+jsonObject_titles.getString("time"));
 
                                 }else {
-                                    modeList.setDate(jsonObject_titles.getString("time"));
+                                    modeList.setTime(jsonObject_titles.getString("time"));
                                 }
 
                                 if (jsonObject_titles.isNull("comments")){
                                   //  System.out.println("NAME"+jsonObject_titles.getString("comments"));
 
                                 }else {
-                                    modeList.setDate(jsonObject_titles.getString("comments"));
+                                    modeList.setComments(jsonObject_titles.getString("comments"));
                                 }
 
                                 if (jsonObject_titles.isNull("refName")){
                                    // System.out.println("NAME"+jsonObject_titles.getString("refName"));
 
                                 }else {
-                                    modeList.setDate(jsonObject_titles.getString("refName"));
+                                    modeList.setRefName(jsonObject_titles.getString("refName"));
                                 }
 
                                 if (jsonObject_titles.isNull("refPhone")){
@@ -1622,12 +1650,12 @@ public class SingleUserActivity extends AppCompatActivity {
                                     modeList.setDate(jsonObject_titles.getString("time"));
                                 }
 
-                                if (jsonObject_titles.isNull("comments")){
+/*                                if (jsonObject_titles.isNull("comments")){
                                     //  System.out.println("NAME"+jsonObject_titles.getString("comments"));
 
                                 }else {
                                     modeList.setDate(jsonObject_titles.getString("comments"));
-                                }
+                                }*/
 
                                 if (jsonObject_titles.isNull("refName")){
                                     // System.out.println("NAME"+jsonObject_titles.getString("refName"));

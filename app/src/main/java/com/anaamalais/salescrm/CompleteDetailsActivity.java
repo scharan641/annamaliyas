@@ -1025,4 +1025,10 @@ public class CompleteDetailsActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(CompleteDetailsActivity.this,HomeActivity.class).putExtra("Status","BACK"));
+        finish();
+    }
 }

@@ -56,6 +56,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -1542,10 +1543,19 @@ public class InterestedContactActivity extends AppCompatActivity implements Adap
                                 QUANTITY = intrested_vehicle.getString("QUANTITY");
                                 edt_cus_quantity.setText(QUANTITY );
                             }
+                            if (intrested_vehicle.isNull("MODEL_ID")){
+                                vehicle_id = "";
+                            }else {
+                                vehicle_id = intrested_vehicle.getString("MODEL_ID");
+                            }
+//                            if (vehicle_id != null){
+//                            }
+                            if ( intrested_vehicle.isNull("MODEL_VARIANT_ID")){
+                                MODEL_VARIANT_ID = "";
 
-                            vehicle_id = intrested_vehicle.getString("MODEL_ID");
-
-                            MODEL_VARIANT_ID = intrested_vehicle.getString("MODEL_VARIANT_ID");
+                            }else {
+                                MODEL_VARIANT_ID = intrested_vehicle.getString("MODEL_VARIANT_ID");
+                            }
 
                             if (intrested_vehicle.isNull("INTERIOR_COLOR_ID")){
                                 interior_color_id = "";
@@ -1802,9 +1812,10 @@ public class InterestedContactActivity extends AppCompatActivity implements Adap
                     e.printStackTrace();
                 }
             }
-            if (mode_id.equals("") || vehicle_id.equals("")||demand_structure_type.equals("")){
-                Toast.makeText(InterestedContactActivity.this, "Select Field", Toast.LENGTH_SHORT).show();
-            }
+            //
+//            if (mode_id.equals("")|| vehicle_id.equals("") ||demand_structure_type.equals("")){
+//                Toast.makeText(InterestedContactActivity.this, "Select Field", Toast.LENGTH_SHORT).show();
+//            }
 
             follow_up_remark= edt_remark.getText().toString().trim();
             if (follow_up_remark.equals("") || follow_up_remark.isEmpty()) {
@@ -1822,16 +1833,17 @@ public class InterestedContactActivity extends AppCompatActivity implements Adap
             }
 
             QUANTITY = edt_cus_quantity.getText().toString();
-
-            if ((customer_name.equals("")||contact_number_one.equals(""))||(contact_number_one.toString().trim().length() < 10) || contact_number_one.isEmpty()) {
+// || vehicle_id.equals("")
+            if ((customer_name.equals("") || vehicle_id.equals("")||contact_number_one.equals(""))||(contact_number_one.toString().trim().length() < 10) || contact_number_one.isEmpty()) {
                 Toast.makeText(InterestedContactActivity.this, "Fill all the fields!!", Toast.LENGTH_SHORT).show();
-            }  else if (mode_id.equals("") || vehicle_id.equals("")||demand_structure_type.equals("")|| Objects.equals(address, "")||(follow_up_time.equals(""))) {
+            }  else if (mode_id.equals("")||demand_structure_type.equals("")|| Objects.equals(address, "")||(follow_up_time.equals(""))) {
                 Toast.makeText(InterestedContactActivity.this, "Fill all the fields!!", Toast.LENGTH_SHORT).show();
             } else if (current_car_maker.equals("")||current_car_model.equals("")||year_month.equals("")||(current_car_reg_number.toString().trim().length() < 5 || current_car_reg_number.toString().trim().length() > 10)
                     ||current_car_fuel_type.equals("")||thisYear.compareTo(year_month) < 0 || "2000".compareTo(year_month) > 0
                     ||(addressthree.toString().trim().length() < 6)){
                 Toast.makeText(InterestedContactActivity.this, "Fill all the fields!!", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+            else {
                 Customer_Update_Equiery();
                 //initialize the progress dialog and show it
                 progressDialog = new ProgressDialog(InterestedContactActivity.this);

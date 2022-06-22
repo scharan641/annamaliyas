@@ -89,8 +89,6 @@ public class CustomerDetailsActivity extends AppCompatActivity {
             txt_booking_exterior_colour , txt_overall_booking_date , txt_booking_booking_amount
             , txt_booking_payment_mode , txt_dlphoto_details , txt_dlnumber_details ;
     private android.app.AlertDialog.Builder alertDialog2;
-    PreferenceManager preferenceManager;
-
     TextView txt_accessories_fitment_reason ,  txt_accessories_fitment_status , extended_warranty , fastag , rto_process ,
             txt_accessories_fitment_reasons , allocation_pdi;
 
@@ -99,7 +97,7 @@ public class CustomerDetailsActivity extends AppCompatActivity {
             txt_registration , txt_insurance , txt_road_tax , txt_tcs_interest , txt_tcs_rate ,
             txt_ex_showroom_price , txt_loan_amount , txt_query_clearance , txt_login_date_time , txt_login_completed , txt_paper_documents_collected ;
 
-    String customer_details_status , REASON;
+    String customer_details_status , REASON , getDlimage , getIntentDlimage;
     SwitchCompat swt_follow_up,swt_status_follow_up,swt_pre_delivery_checklist;
     LinearLayout lin_follow_up,lin_status_list,lin_intersted_id,lin_test_derive_details,lin_rating_details,
             lin_predelivery_option,lin_drop_option,lin_reason_interested,lin_accessories_fitment
@@ -135,8 +133,8 @@ public class CustomerDetailsActivity extends AppCompatActivity {
         API_TOKEN = MyFunctions.getSharedPrefs(CustomerDetailsActivity.this, Constants.TOKEN,"");
         txt_satus_text = findViewById(R.id.txt_satus_text);
         customer_details_status = getIntent().getStringExtra("Status");
-        preferenceManager = new PreferenceManager(this);
-        // getIntent().getStringExtra("Status");
+        getDlimage = MyFunctions.getSharedPrefs(CustomerDetailsActivity.this, Constants.DLPHOTO,"");
+        getIntentDlimage = getIntent().getStringExtra("dl_photo");
 
         txt_satus_text.setText(customer_details_status);
         txt_cus_name = findViewById(R.id.txt_cus_name);
@@ -503,8 +501,9 @@ public class CustomerDetailsActivity extends AppCompatActivity {
             rel_next_follow_up.setVisibility(View.GONE);
             rel_time_follow_up.setVisibility(View.GONE);
             rel_pre_delivery_checklist.setVisibility(View.VISIBLE);
-            invoice_complete_date.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.BOOKINGDATE,""));
-            delivery_invoice_time.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.BOOKINGTIME,""));
+            invoice_complete_date.setVisibility(View.VISIBLE);
+            invoice_complete_date.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.INVOICE_COMPLETED_DATE,""));
+            delivery_invoice_time.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.INVOICE_COMPLETED_TIME,""));
             txt_invoice_complete_comments.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.INVOICE_COMPLETED_COMMENTS,""));
             rel_location.setVisibility(View.GONE);
             rel_model.setVisibility(View.VISIBLE);
@@ -631,7 +630,7 @@ public class CustomerDetailsActivity extends AppCompatActivity {
             lin_delivery_complete.setVisibility(View.VISIBLE);
             delivery_complete_date.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.DATE,""));
             delivery_complete_time.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.TIME,""));
-            txt_delivery_complete_comments.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.COMMENT,""));
+            txt_delivery_complete_comments.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.COMMENTS,""));
             delivery_complete_referral_name.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.REFNAME,""));
             delivery_complete_referral_contact_no.setText(MyFunctions.getSharedPrefs(CustomerDetailsActivity.this,Constants.REFPHONE,""));
             txt_customer_details_title.setText("Delivery");
@@ -1132,10 +1131,16 @@ public class CustomerDetailsActivity extends AppCompatActivity {
         final android.app.AlertDialog testDialog = alertDialog2.create();
 //        final ImageView tv_camera = add_menu_layout.findViewById(R.id.uploadimage);
         try {
-            if (preferenceManager.getLicencedriveimageurl() != null){
-//                layout_gallery.setImageResource(Integer.parseInt(preferenceManager.getLicencedriveimage()));
-                Glide.with(this).load(preferenceManager.getLicencedriveimageurl()).error(R.drawable.ic_add_image).into(layout_gallery);
-
+//            if (getDlimage != null){
+//                Glide.with(this).load(getDlimage).error(R.drawable.ic_add_image).into(layout_gallery);
+//            }else
+           if (getIntentDlimage != null){
+                Glide.with(this).load(getIntentDlimage).error(R.drawable.ic_add_image).into(layout_gallery);
+            }else if (getDlimage != null){
+                Glide.with(this).load(getDlimage).error(R.drawable.ic_add_image).into(layout_gallery);
+            }
+            else {
+                Toast.makeText(this, "Please Update Image", Toast.LENGTH_SHORT).show();
             }
         }catch (Exception exception){
 

@@ -252,6 +252,7 @@ public class ActivityUpdateContact extends AppCompatActivity implements AdapterV
             txt_corporate.setBackgroundResource(R.drawable.btn_line);
             txt_corporate.setTextColor(Color.parseColor("#EB0A1E"));
             rel_cop_details_title.setVisibility(View.VISIBLE);
+            lin_personal_details.setVisibility(View.GONE);
             isSecondPlace = true;
         }
 
@@ -782,7 +783,9 @@ public class ActivityUpdateContact extends AppCompatActivity implements AdapterV
 
                     case R.id.spinner_exterEior_color:
                         // if (exteriorcolorid==null||exteriorcolorid.equals("")){
-                        exterior_color_id = updateExteriorColorLists.get(position).getExterior_color_id();
+                        if (updateExteriorColorLists.size() > position){
+                            exterior_color_id = updateExteriorColorLists.get(position).getExterior_color_id();
+                        }
                         //  }else {
                         //  spinner_exterEior_color.setSelection(Integer.parseInt(exteriorcolorid));
                         //   }

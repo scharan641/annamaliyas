@@ -21,8 +21,10 @@ import com.anaamalais.salescrm.R;
 import com.anaamalais.salescrm.Utils.Constants;
 import com.anaamalais.salescrm.Utils.MyFunctions;
 import com.anaamalais.salescrm.Utils.PreferenceManager;
+import com.anaamalais.salescrm.common.CommonData;
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CatalogueAdapter extends RecyclerView.Adapter<CatalogueAdapter.CatalogueViewHolder> {
@@ -63,6 +65,19 @@ public class CatalogueAdapter extends RecyclerView.Adapter<CatalogueAdapter.Cata
         holder.lin_catalogue_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CommonData.interioraccessoriesLists.clear();
+                CommonData.exterioraccessoriesLists.clear();
+                CommonData.utilityaccessoriesLists.clear();
+                MyFunctions.setSharedPrefs(mCtx,Constants.PRICEINT,"");
+                MyFunctions.setSharedPrefs(mCtx,Constants.PRICEEXT,"");
+                MyFunctions.setSharedPrefs(mCtx,Constants.PRICEUTL,"");
+                VariantColorTypeAdapter.lastClickedPosition = -1;
+                VariantTypeAdapter.lastClickedPosition = -1;
+                preferenceManager.cleanAccessoriesData();
+            /*    preferenceManager.setModelList(Constants.EXTEREIOR,new ArrayList<>());
+                preferenceManager.setModelList(Constants.INTERIOR,new ArrayList<>());
+                preferenceManager.setModelList(Constants.UTILITY,new ArrayList<>());
+*/
                 MyFunctions.setSharedPrefs(mCtx, Constants.MODEL_ID,mode.getId());
                 preferenceManager.setModelId(mode.getId());
                 MyFunctions.setSharedPrefs(mCtx, Constants.MODELIMAGE,mode.getVehicle_image());

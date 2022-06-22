@@ -66,7 +66,8 @@ public class ModelDetailsActivity extends AppCompatActivity {
     TextView txt_model_price , txt_interior_accessories_amount , txt_exterior_accessories_amount
             , txt_utility_accessories_amount , txt_generate_quotation , txt_model_name;
     ImageView image_model_car;
-    String MODELID,MODELIDSAVE , MODEL_IMAGE , Variant_id,COLOR_ID;
+    String MODELID,MODELIDSAVE , MODEL_IMAGE ,COLOR_ID;
+    static String Variant_id ="";
     RequestQueue requestQueue;
     String status_code, msg, token, API_TOKEN , vehcledetail , vehcleimage;
     RecyclerView rv_variant_list , rv_variant_color;
@@ -128,30 +129,19 @@ public class ModelDetailsActivity extends AppCompatActivity {
 
 
         if (MyFunctions.getSharedPrefs(ModelDetailsActivity.this,Constants.PRICEINT,"")!=null){
-            if(getIntent().getStringExtra("interiorAmount")!=null) {
-                txt_interior_accessories_amount.setText("₹" + getIntent().getStringExtra("interiorAmount"));
-            }else{
-                txt_interior_accessories_amount.setText("₹ 00.00");
-            }
+            txt_interior_accessories_amount.setText("₹ "+MyFunctions.getSharedPrefs(ModelDetailsActivity.this,Constants.PRICEINT,""));
         }else {
             txt_interior_accessories_amount.setText("₹ 00.00");
         }
         if (MyFunctions.getSharedPrefs(ModelDetailsActivity.this,Constants.PRICEEXT,"")!=null){
-            if(getIntent().getStringExtra("exteriorAmount")!=null) {
-                txt_exterior_accessories_amount.setText("₹" + getIntent().getStringExtra("exteriorAmount"));
-            }else{
-                txt_exterior_accessories_amount.setText("₹ 00.00");
-            }
+            txt_exterior_accessories_amount.setText("₹ "+MyFunctions.getSharedPrefs(ModelDetailsActivity.this,Constants.PRICEEXT,""));
         }else {
             txt_exterior_accessories_amount.setText("₹ 00.00");
         }
 
         if (MyFunctions.getSharedPrefs(ModelDetailsActivity.this,Constants.PRICEUTL,"")!=null){
-            if(getIntent().getStringExtra("utlAmount")!=null) {
-                txt_utility_accessories_amount.setText("₹" + getIntent().getStringExtra("utlAmount"));
-            }else{
-                txt_utility_accessories_amount.setText("₹ 00.00");
-            }
+            txt_utility_accessories_amount.setText("₹ "+MyFunctions.getSharedPrefs(ModelDetailsActivity.this,Constants.PRICEUTL,""));
+
         }else {
             txt_utility_accessories_amount.setText("₹ 00.00");
         }
@@ -346,19 +336,24 @@ public class ModelDetailsActivity extends AppCompatActivity {
                                 model.setVariant_id(jsonObject2.getString("variant_id"));
                                 model.setVariant(jsonObject2.getString("variant"));
                                 model.setFuel_type(jsonObject2.getString("fuel_type"));
+
                                 variantsAccessLists.add(model);
                             }
                             varianttypeadapter = new VariantTypeAdapter(ModelDetailsActivity.this, variantsAccessLists);
                             rv_variant_list.setAdapter(varianttypeadapter);
-
+                            if(VariantTypeAdapter.lastClickedPosition != -1) {
+                                Accessoriesmaster_Get_Vehicle_Details_Color();
+                            }
                             // Setting up the events that will occur on each Main-List item click
                             varianttypeadapter.setWhenClickListener(new VariantTypeAdapter.OnItemsClickListener(){
                                 @Override
                                 public void onItemClick(VariantsAccessList variantsAccessList) {
                                     Variant_id = variantsAccessList.getVariant_id();
+//                                    preferenceManager.setModelId(Variant_id);
                                     MyFunctions.setSharedPrefs(ModelDetailsActivity.this,Constants.VARIANTID,Variant_id);
                                     //setRVTwoList(rvOneModel.getNum());
                                     Accessoriesmaster_Get_Vehicle_Details_Color();
+
                                 }
                             });
 
@@ -463,6 +458,7 @@ public class ModelDetailsActivity extends AppCompatActivity {
                             System.out.println("Check statusMessage of Login Activity:" + msg);
                             JSONObject data = jsonObj.getJSONObject("data");
                             JSONArray catalogue = data.getJSONArray("data");
+//                            Variant_id = preferenceManager.getModelId();
                             for (int k = 0 ; k < catalogue.length() ; k++){
                                 JSONObject jsonObject2 = catalogue.getJSONObject(k);
                                 String variant_id = jsonObject2.getString("variant_id");
@@ -611,7 +607,7 @@ public class ModelDetailsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Accessoriesmaster_Get_Vehicle_Details();
+//        Accessoriesmaster_Get_Vehicle_Details();
 
     }
 }
