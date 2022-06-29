@@ -149,6 +149,8 @@ public class HomeActivity extends AppCompatActivity {
         rv_today_task.setLayoutManager(new LinearLayoutManager(HomeActivity.this));
         todayTaskLists = new ArrayList<>();
 
+
+
         // txt_todays_contact.setText(Html.fromHtml("<html><body><font size=5>5 </font> <font size=2>/10 </font></body><html>"));
 
       /*  CustomBottomNavigationView customBottomNavigationView1 = findViewById(R.id.customBottomBar);
