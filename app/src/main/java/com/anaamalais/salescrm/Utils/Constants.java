@@ -3,7 +3,8 @@ package com.anaamalais.salescrm.Utils;
 public class Constants {
 
     public static String IS_LOGIN="is_login";
-    public static final String BASE_URL ="http://atcrm.cloudnowtech.com/web/";
+//    public static final String BASE_URL ="http://atcrm.cloudnowtech.com/web/";
+    public static final String BASE_URL ="https://atcrm.cloudnowtech.com/web/";
     public static final String TOKEN = "token";
     public static final String IMAGETOKEN = "API_TOKEN";
     public static String USER_ID ="UserID";
